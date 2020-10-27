@@ -51,3 +51,16 @@ func loadUrl() -> (code: Int, message: String) {
 let loaded = loadUrl()
 loaded.0
 loaded.1
+
+var nbHabitants: [String:Int] = ["Paris" : 2250000, "Bordeaux" : 239000, "Lyon" : 491268, "Marseille" : 850636]
+
+let hapParis: Int? = nbHabitants["Paris"] // Int
+let hapBerlin: Optional<Int> = nbHabitants["Berlin"] // nil
+let hapBdx: Int? = nbHabitants["Bordeaux"] // Int
+
+if let habParis = nbHabitants["Paris"], let habBdx = nbHabitants["Bordeaux"] { // Test / unwrap
+    habBdx + habParis
+}
+
+let anInt: Int
+let anOptional: Int?
