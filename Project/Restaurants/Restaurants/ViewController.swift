@@ -17,10 +17,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var isVisitedSwitch: UISwitch!
 
     let library = Library()
+
+    var nameOrEmpty: String {
+        return nameTextField.text ?? ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+        print(view.center)
+
+
     }
 
     @IBAction func save(_ sender: UIButton) {
@@ -39,7 +47,53 @@ class ViewController: UIViewController {
         library.add(resto)
 
         print(library.list())
+
+        dismiss(animated: true, completion: nil)
+
+        UIColor.customBack
     }
 
 }
 
+extension UIView {
+
+    //Propriété stockée interdite dans extension
+//    var name: String
+
+    var center: CGPoint {
+        let origin = self.frame.origin
+        let width = self.frame.width
+        let height = self.frame.height
+
+        let center = CGPoint(x: origin.x + width / 2, y: origin.y + height / 2)
+        return center
+    }
+}
+
+extension UIColor {
+
+    static var customBack: UIColor {
+        return UIColor(named: "customBackground") ?? .black
+    }
+
+    var test: String {
+        return "toto"
+    }
+}
+
+extension Restaurant {
+    static var randomRestaurant: Restaurant {
+        return Restaurant(name: "", style: .burger, adress: "", mediumPrice: 6.8, veganFriendly: true, alreadyVisited: false)
+    }
+}
+
+
+
+//Static (type) Property                instance property
+//Computed property
+//Stored property
+
+// static var toto: String {} //static computed property
+// var toto: String {}        //instance computed property
+// static var toto = "Toto"   // static stored property
+// var toto = "Toto"          // instance stored property

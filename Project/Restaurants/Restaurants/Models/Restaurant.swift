@@ -19,4 +19,6 @@ struct Restaurant {
     let mediumPrice: Double
     let veganFriendly: Bool
     var alreadyVisited: Bool
+
+
 }
