@@ -16,6 +16,7 @@
 		33FFA6B925486F3800C6E416 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FFA6B825486F3800C6E416 /* Restaurant.swift */; };
 		33FFA6BD25486F4700C6E416 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FFA6BC25486F4700C6E416 /* Library.swift */; };
 		33FFA6C025486F8F00C6E416 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FFA6BF25486F8F00C6E416 /* Pub.swift */; };
+		33FFA6E42549C63300C6E416 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FFA6E32549C63300C6E416 /* RestaurantTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		33FFA6B825486F3800C6E416 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		33FFA6BC25486F4700C6E416 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		33FFA6BF25486F8F00C6E416 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
+		33FFA6E32549C63300C6E416 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				33FFA6A225486EB900C6E416 /* AppDelegate.swift */,
 				33FFA6A425486EB900C6E416 /* SceneDelegate.swift */,
 				33FFA6A625486EB900C6E416 /* ViewController.swift */,
+				33FFA6E32549C63300C6E416 /* RestaurantTableViewController.swift */,
 				33FFA6A825486EB900C6E416 /* Main.storyboard */,
 				33FFA6AB25486EBB00C6E416 /* Assets.xcassets */,
 				33FFA6AD25486EBB00C6E416 /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 			files = (
 				33FFA6B925486F3800C6E416 /* Restaurant.swift in Sources */,
 				33FFA6A725486EB900C6E416 /* ViewController.swift in Sources */,
+				33FFA6E42549C63300C6E416 /* RestaurantTableViewController.swift in Sources */,
 				33FFA6BD25486F4700C6E416 /* Library.swift in Sources */,
 				33FFA6C025486F8F00C6E416 /* Pub.swift in Sources */,
 				33FFA6A325486EB900C6E416 /* AppDelegate.swift in Sources */,

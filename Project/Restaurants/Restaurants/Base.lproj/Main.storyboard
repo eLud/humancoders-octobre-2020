@@ -13,13 +13,13 @@
         <!--Restaurants-->
         <scene sceneID="Hsl-CZ-H4f">
             <objects>
-                <tableViewController id="Gb1-66-5WE" sceneMemberID="viewController">
+                <tableViewController id="Gb1-66-5WE" customClass="RestaurantTableViewController" customModule="Restaurants" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JSA-Bw-Spo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="T2W-OQ-Ovq" detailTextLabel="I0f-0x-bVg" style="IBUITableViewCellStyleSubtitle" id="VDo-iK-qSh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restoCell" textLabel="T2W-OQ-Ovq" detailTextLabel="I0f-0x-bVg" style="IBUITableViewCellStyleSubtitle" id="VDo-iK-qSh">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VDo-iK-qSh" id="he2-mN-TKe">
@@ -263,7 +263,7 @@
     </scenes>
     <resources>
         <namedColor name="customBackground">
-            <color red="0.34928042487278999" green="1" blue="0.15108597457568007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34900000691413879" green="1" blue="0.15099999308586121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
