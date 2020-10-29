@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33F808C3254AC60C007289E2 /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F808C2254AC60C007289E2 /* RestaurantDetailsViewController.swift */; };
 		33FFA6A325486EB900C6E416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FFA6A225486EB900C6E416 /* AppDelegate.swift */; };
 		33FFA6A525486EB900C6E416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FFA6A425486EB900C6E416 /* SceneDelegate.swift */; };
 		33FFA6A725486EB900C6E416 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FFA6A625486EB900C6E416 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33F808C2254AC60C007289E2 /* RestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewController.swift; sourceTree = "<group>"; };
 		33FFA69F25486EB900C6E416 /* Restaurants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FFA6A225486EB900C6E416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33FFA6A425486EB900C6E416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				33FFA6A425486EB900C6E416 /* SceneDelegate.swift */,
 				33FFA6A625486EB900C6E416 /* ViewController.swift */,
 				33FFA6E32549C63300C6E416 /* RestaurantTableViewController.swift */,
+				33F808C2254AC60C007289E2 /* RestaurantDetailsViewController.swift */,
 				33FFA6A825486EB900C6E416 /* Main.storyboard */,
 				33FFA6AB25486EBB00C6E416 /* Assets.xcassets */,
 				33FFA6AD25486EBB00C6E416 /* LaunchScreen.storyboard */,
@@ -163,6 +166,7 @@
 				33FFA6BD25486F4700C6E416 /* Library.swift in Sources */,
 				33FFA6C025486F8F00C6E416 /* Pub.swift in Sources */,
 				33FFA6A325486EB900C6E416 /* AppDelegate.swift in Sources */,
+				33F808C3254AC60C007289E2 /* RestaurantDetailsViewController.swift in Sources */,
 				33FFA6A525486EB900C6E416 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

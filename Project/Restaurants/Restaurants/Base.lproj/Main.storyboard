@@ -43,7 +43,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="JdD-qo-Wg9" kind="show" id="mq9-QO-JRS"/>
+                                    <segue destination="JdD-qo-Wg9" kind="show" identifier="details" id="mq9-QO-JRS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,7 +56,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="QHy-61-jAm">
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="QHy-61-jAm" id="v0H-sM-7nB">
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" identifier="form" popoverAnchorBarButtonItem="QHy-61-jAm" id="v0H-sM-7nB">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -224,17 +224,16 @@
             </objects>
             <point key="canvasLocation" x="995.65217391304361" y="-587.27678571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant Details View Controller-->
         <scene sceneID="dxZ-YV-iGd">
             <objects>
-                <viewController id="JdD-qo-Wg9" sceneMemberID="viewController">
+                <viewController id="JdD-qo-Wg9" customClass="RestaurantDetailsViewController" customModule="Restaurants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sMn-Ly-uEQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Détails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnv-l0-pqs">
-                                <rect key="frame" x="186" y="438" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Détails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnv-l0-pqs">
+                                <rect key="frame" x="181" y="437.5" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -242,8 +241,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WM5-GI-Rhn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lnv-l0-pqs" firstAttribute="centerX" secondItem="sMn-Ly-uEQ" secondAttribute="centerX" id="qGs-l6-atD"/>
+                            <constraint firstItem="Lnv-l0-pqs" firstAttribute="centerY" secondItem="sMn-Ly-uEQ" secondAttribute="centerY" id="rYs-t1-kjy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0w4-KQ-LiF"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="Lnv-l0-pqs" id="6sU-O5-UNt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSH-19-yRI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
