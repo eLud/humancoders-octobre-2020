@@ -53,13 +53,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Restaurants" id="FUN-eR-UfA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QHy-61-jAm">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="QHy-61-jAm" id="v0H-sM-7nB">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="QHy-61-jAm">
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="QHy-61-jAm" id="v0H-sM-7nB">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="daR-eg-qBI">
+                                <connections>
+                                    <action selector="refresh:" destination="Gb1-66-5WE" id="53f-28-dfa"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="su1-yn-B0m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

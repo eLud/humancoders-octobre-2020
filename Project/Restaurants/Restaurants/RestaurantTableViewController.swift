@@ -9,14 +9,39 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
 
-    let library = Library()
+    let library = Library.instance
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         library.add(Restaurant(name: "Resto 1", style: .burger, adress: "Adresse 1", mediumPrice: 7.9, veganFriendly: true, alreadyVisited: false))
 
+        //Dire au tableView qui est son assistant
         tableView.dataSource = self
+
+        //Added a UIRefreshControl for pull to refresh
+        let action = UIAction { (action) in
+            self.tableView.reloadData()
+            print("Refresh")
+            self.refreshControl?.endRefreshing()
+        }
+
+        self.refreshControl = UIRefreshControl(frame: CGRect.zero, primaryAction: action)
+
+        //Méthode pour iOS 13-
+//        self.refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(forName: Notification.Name("ModelUpdated"), object: nil, queue: OperationQueue.main) { notif in
+            self.tableView.reloadData()
+            print(notif)
+        }
+    }
+
+    @IBAction func refresh(_ sender: UIBarButtonItem) {
+
+        sender.isEnabled = false
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source

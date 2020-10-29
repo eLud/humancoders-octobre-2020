@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var styleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var isVisitedSwitch: UISwitch!
 
-    let library = Library()
+    let library = Library.instance
 
     var nameOrEmpty: String {
         return nameTextField.text ?? ""

@@ -9,18 +9,28 @@ import Foundation
 
 class Library {
 
+    static let instance = Library()
+
     private var restaurants: [Restaurant]
 
-    init(restaurants: [Restaurant] = []) {
+    private init(restaurants: [Restaurant] = []) {
         self.restaurants = restaurants
     }
 
     func add(_ restaurant: Restaurant) {
         restaurants.append(restaurant)
+
+        //Avertir du changement
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.post(name: Notification.Name("ModelUpdated"), object: self)
     }
 
     func remove(_ restaurant: Restaurant) {
         //TO DO
+
+        //Avertir du changement
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.post(name: Notification.Name("ModelUpdated"), object: self)
     }
 
     func list() -> [Restaurant] {
