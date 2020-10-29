@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Restaurant {
+struct Restaurant: Identifiable {
 
     enum Style: String, CaseIterable, Identifiable {
         case japanese, indian, french, burger, healthy, other
@@ -17,12 +17,11 @@ struct Restaurant {
         }
     }
 
+    let id = UUID()
     let name: String
     let style: Style?
     let adress: String
     let mediumPrice: Double
     let veganFriendly: Bool
     var alreadyVisited: Bool
-
-
 }
