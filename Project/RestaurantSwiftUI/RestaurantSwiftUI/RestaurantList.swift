@@ -28,7 +28,7 @@ struct RestaurantList: View {
                 Label("New", systemImage: "plus")
             }))
             .sheet(isPresented: $showForm, content: {
-                FormView()
+                FormView(showForm: $showForm)
             })
         }
     }

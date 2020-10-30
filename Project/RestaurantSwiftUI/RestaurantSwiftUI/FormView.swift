@@ -19,6 +19,10 @@ struct FormView: View {
     @State private var note: Double = 5.0
 
     @EnvironmentObject var library: Library
+    @Binding var showForm: Bool
+
+    //Can be used to dismiss the modal sheet
+    @Environment(\.presentationMode) var presMode
 
 //    private var numberFormatter: NumberFormatter = {
 //        let numberFormatter = NumberFormatter()
@@ -29,34 +33,39 @@ struct FormView: View {
 //    }()
 
     var body: some View {
-        Form {
-            Picker("Style", selection: $selection) {
-                ForEach(Restaurant.Style.allCases) { style in
-                    Text(style.rawValue)
-                        .tag(style)
+        NavigationView {
+            Form {
+                Picker("Style", selection: $selection) {
+                    ForEach(Restaurant.Style.allCases) { style in
+                        Text(style.rawValue)
+                            .tag(style)
+                    }
                 }
-            }
-            TextField("Name", text: $name)
-            TextField("Address", text: $address)
-            HStack {
-                Text("Medium Price")
-                TextField("Medium Price", value: $mediumPriceDouble, formatter: NumberFormatter())
-            }
-            Section {
-                Toggle("Vegan friendly" , isOn: $veganFriendly)
-                Toggle("Visited" , isOn: $visited)
-                if visited {
-                    HStack {
-                        Slider(value: $note, in: 0...10)
-                        Text("\(note)")
+                TextField("Name", text: $name)
+                TextField("Address", text: $address)
+                HStack {
+                    Text("Medium Price")
+                    TextField("Medium Price", value: $mediumPriceDouble, formatter: NumberFormatter())
+                }
+                Section {
+                    Toggle("Vegan friendly" , isOn: $veganFriendly)
+                    Toggle("Visited" , isOn: $visited)
+                    if visited {
+                        HStack {
+                            Slider(value: $note, in: 0...10)
+                            Text("\(note, specifier: "%.1f")")
+                            Text(String(format: "%.1f", note))
+                        }
+                    }
+                }
+                Section {
+                    Button("Save") {
+                        save()
                     }
                 }
             }
-            Section {
-                Button("Save") {
-                    save()
-                }
-            }
+            .navigationTitle("New restaurant")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 
@@ -65,14 +74,17 @@ struct FormView: View {
         let resto = Restaurant(name: name, style: selection, adress: address, mediumPrice: mediumPriceDouble, veganFriendly: veganFriendly, alreadyVisited: visited)
         print(resto)
         library.add(resto)
+
+        presMode.wrappedValue.dismiss()
+//        showForm.toggle()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FormView()
-            FormView()
+            FormView(showForm: .constant(true))
+            FormView(showForm: .constant(false))
                 .preferredColorScheme(.dark)
         }.environmentObject(Library(restaurants: [Restaurant(name: "Resto1", style: .burger, adress: "Adress", mediumPrice: 9.9, veganFriendly: true, alreadyVisited: false)]))
     }

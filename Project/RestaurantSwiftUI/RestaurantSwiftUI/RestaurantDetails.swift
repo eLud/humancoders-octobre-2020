@@ -13,12 +13,30 @@ struct RestaurantDetails: View {
 
     var body: some View {
         Form {
-            Text(restaurant.name)
+            VStack {
+                Text(restaurant.name)
+            }
             Text(restaurant.adress)
             Text("\(restaurant.mediumPrice)")
+            HStack {
+                Button("Test") {
+                    print("b1")
+                }
+                Button("Test2") {
+                    print("b2")
+                }
+                Button(action: {}, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15).foregroundColor(.green)
+                        Text("Mon button")
+                        Image(systemName: "gamecontroller.fill")
+                    }
+                })
+            }.buttonStyle(BorderlessButtonStyle())
             if restaurant.veganFriendly {
                 Image(systemName: "leaf.fill")
                     .foregroundColor(.green)
+                    .font(.largeTitle)
             }
         }
     }
