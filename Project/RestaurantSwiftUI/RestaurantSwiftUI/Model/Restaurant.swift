@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Restaurant: Identifiable {
+struct Restaurant: Identifiable, Codable {
 
-    enum Style: String, CaseIterable, Identifiable {
+    enum Style: String, CaseIterable, Identifiable, Codable {
         case japanese, indian, french, burger, healthy, other
 
         var id: String {

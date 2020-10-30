@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct RestaurantSwiftUIApp: App {
 
-    @StateObject var library = Library(restaurants: [Restaurant(name: "Resto1", style: .burger, adress: "Address1", mediumPrice: 9.9, veganFriendly: true, alreadyVisited: false)])
+    @StateObject var library = Library()
 
     var body: some Scene {
         WindowGroup {

@@ -13,10 +13,15 @@ class Library: ObservableObject {
 
     init(restaurants: [Restaurant] = []) {
         self.restaurants = restaurants
+
+        if restaurants.isEmpty {
+            restoreBackup()
+        }
     }
 
     func add(_ restaurant: Restaurant) {
         restaurants.append(restaurant)
+        save()
     }
 
     func remove(_ restaurant: Restaurant) {
@@ -35,5 +40,42 @@ class Library: ObservableObject {
         }
 
         return nil
+    }
+
+    func save() {
+
+        guard let data = try? JSONEncoder().encode(restaurants) else { return }
+
+        let fileManager = FileManager.default
+        guard let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+
+        let fullUrl = documentsUrl.appendingPathComponent("backup.json")
+        print(fullUrl)
+
+
+        try? data.write(to: fullUrl)
+
+//        try? fileManager.removeItem(at: fullUrl)
+        
+//        do {
+//            let data = try JSONEncoder().encode(restaurants)
+//        } catch {
+//            print(error)
+//        }
+    }
+
+    func restoreBackup() {
+
+        let fileManager = FileManager.default
+        guard let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+
+        let fullUrl = documentsUrl.appendingPathComponent("backup.json")
+
+        guard let data = try? Data(contentsOf: fullUrl) else { return }
+
+        let jsonDecoder = JSONDecoder()
+        guard let restaurants = try? jsonDecoder.decode([Restaurant].self, from: data) else { return }
+
+        self.restaurants = restaurants
     }
 }

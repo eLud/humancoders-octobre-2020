@@ -77,6 +77,16 @@ struct FormView: View {
 
         presMode.wrappedValue.dismiss()
 //        showForm.toggle()
+
+        let jsonEncoder = JSONEncoder()
+        let plistEncoder = PropertyListEncoder()
+
+        if let data = try? plistEncoder.encode(resto) {
+            print(data)
+        }
+        if let data = try? jsonEncoder.encode(resto) {
+            print(data)
+        }
     }
 }
 
