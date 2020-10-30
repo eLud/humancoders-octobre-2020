@@ -11,8 +11,13 @@ struct RestaurantDetails: View {
 
     let restaurant: Restaurant
 
+    @State var image: Image?
+
     var body: some View {
         Form {
+            if let image = image {
+                image
+            }
             VStack {
                 Text(restaurant.name)
             }
@@ -24,6 +29,7 @@ struct RestaurantDetails: View {
                 }
                 Button("Test2") {
                     print("b2")
+                    getImage()
                 }
                 Button(action: {}, label: {
                     ZStack {
@@ -39,6 +45,16 @@ struct RestaurantDetails: View {
                     .font(.largeTitle)
             }
         }
+    }
+
+    func getImage() {
+        let req = NetworkRequester()
+        req.getImage { image in
+            guard let image = image else { return }
+            self.image = Image(uiImage: image)
+            print("Fin closure")
+        }
+        print("Fin getImage")
     }
 }
 
