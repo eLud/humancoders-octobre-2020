@@ -9,7 +9,9 @@ import SwiftUI
 
 struct RestaurantList: View {
 
-    let library = Library(restaurants: [Restaurant(name: "Resto1", style: .burger, adress: "Address1", mediumPrice: 9.9, veganFriendly: true, alreadyVisited: false)])
+    @EnvironmentObject var library: Library
+
+    @State private var showForm = false
 
     var body: some View {
         NavigationView {
@@ -21,10 +23,13 @@ struct RestaurantList: View {
             }
             .navigationTitle("Restaurants")
             .navigationBarItems(trailing: Button(action: {
-
+                showForm.toggle()
             }, label: {
                 Label("New", systemImage: "plus")
             }))
+            .sheet(isPresented: $showForm, content: {
+                FormView()
+            })
         }
     }
 }
@@ -50,6 +55,7 @@ struct RestoCell: View {
 struct RestaurantList_Previews: PreviewProvider {
     static var previews: some View {
         RestaurantList()
+            .environmentObject(Library(restaurants: [Restaurant(name: "Resto1", style: .burger, adress: "Adress", mediumPrice: 9.9, veganFriendly: true, alreadyVisited: false)]))
     }
 }
 

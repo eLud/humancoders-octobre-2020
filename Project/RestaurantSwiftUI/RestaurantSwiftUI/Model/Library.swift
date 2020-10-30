@@ -7,9 +7,9 @@
 
 import Foundation
 
-class Library {
+class Library: ObservableObject {
 
-    private var restaurants: [Restaurant]
+    @Published private var restaurants: [Restaurant]
 
     init(restaurants: [Restaurant] = []) {
         self.restaurants = restaurants
