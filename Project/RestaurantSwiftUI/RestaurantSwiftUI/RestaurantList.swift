@@ -20,13 +20,22 @@ struct RestaurantList: View {
                                label: {
                                 RestoCell(resto: resto)
                                })
+                    .contextMenu(ContextMenu(menuItems: {
+                        Text("Menu Item 1")
+                        Text("Menu Item 2")
+                        Text("Menu Item 3")
+                    }))
             }
             .navigationTitle("Restaurants")
             .navigationBarItems(trailing: Button(action: {
                 showForm.toggle()
             }, label: {
                 Label("New", systemImage: "plus")
-            }))
+            }).contextMenu(ContextMenu(menuItems: {
+                Text("Menu Item 1")
+                Text("Menu Item 2")
+                Text("Menu Item 3")
+            })))
             .sheet(isPresented: $showForm, content: {
                 FormView(showForm: $showForm)
             })
