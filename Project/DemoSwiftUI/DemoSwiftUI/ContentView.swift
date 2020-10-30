@@ -12,6 +12,9 @@ struct ContentView: View {
     @State private var firstName: String = ""
     @State private var isVeganFriendly: Bool = false
 
+    @AppStorage("username") var username: String = "Anonymous"
+    @SceneStorage("username") var username2: String = "Anonymous"
+
     var body: some View {
         VStack(spacing: 20) {
             Badge3D(title: firstName, subtitle: "Sous-Titre", angle: 20)
@@ -20,8 +23,13 @@ struct ContentView: View {
                 .padding(.top, 30)
             TextField("First name", text: $firstName)
             TextField("Last name", text: $firstName)
-            Text(firstName)
+            Text(username)
             Toggle("Is Vegan friendly", isOn: $isVeganFriendly)
+            Button("Log in") {
+                username = firstName
+
+                UserDefaults.standard.set(firstName, forKey: "username")
+            }
         }
     }
 }
